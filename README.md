@@ -25,7 +25,7 @@ generated stubs (it can auto-generate them on connection).
 When the game starts, a server is created with RPC port 50000 and Stream port 50001.
 There is no configuration for this yet - it is hard coded in.
 
-Here's an example, with all the currently available telemetry:
+Here's an example in Python, with all the currently available telemetry:
 ```
 import krpc
 conn = krpc.connect()
@@ -38,6 +38,7 @@ print(conn.space_center2.sealevel_altitude)
 ## Links for more info
 
  * [Documentation for kRPC1](https://krpc.github.io/krpc)
+ * [SpaceDock](https://spacedock.info/mod/3322/kRPC2)
  * [Discord](https://discord.gg/bXuaTrj)
 
 ## Building
