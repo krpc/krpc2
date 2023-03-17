@@ -41,8 +41,20 @@ print(conn.space_center2.sealevel_altitude)
  * [SpaceDock](https://spacedock.info/mod/3322/kRPC2)
  * [Discord](https://discord.gg/bXuaTrj)
 
-## Building
+## Building on Linux
 
- * Install Bazel
- * Put a copy of KSP2 in lib/ksp2 (so you have lib/ksp2/KSP_x64_Data/...)
+ * [Install Bazel](https://bazel.build/install/)
+ * Create a symlink from `lib/ksp2` to where you have Kerbal Space Program 2 installed, so that you have `lib/ksp2/KSP_x64_Data/Managed/...`
+ * Run `bazel build //server:KRPC2`
+
+## Building on Windows
+
+ * [Install Bazel](https://bazel.build/install/)
+   * If your user directory contains spaces, the build may not work. If this is the case, create a file called
+     `%ProgramData%/bazel.bazelrc` containing the following:
+     ```
+     startup --output_user_root="C:/bazel-root"
+     ```
+   * If you get permissions errors related to symlinks when building you need to enable "Developer Mode".
+ * Put a copy of KSP2 in lib/ksp2 (so you have `lib/ksp2/KSP_x64_Data/Managed/...`)
  * Run `bazel build //server:KRPC2`
