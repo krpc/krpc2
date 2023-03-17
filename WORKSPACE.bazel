@@ -1,0 +1,41 @@
+load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
+
+http_archive(
+    name = "rules_dotnet",
+    sha256 = "e20b2994bb379c58b3b6a5de75a070e76ccff1ce242422ea95874c1c0ad62f69",
+    strip_prefix = "rules_dotnet-0.8.7",
+    url = "https://github.com/bazelbuild/rules_dotnet/releases/download/v0.8.7/rules_dotnet-v0.8.7.tar.gz",
+)
+
+load(
+    "@rules_dotnet//dotnet:repositories.bzl",
+    "dotnet_register_toolchains",
+    "rules_dotnet_dependencies",
+)
+
+rules_dotnet_dependencies()
+
+dotnet_register_toolchains("dotnet", "7.0.101")
+
+load("@rules_dotnet//dotnet:rules_dotnet_nuget_packages.bzl", "rules_dotnet_nuget_packages")
+
+rules_dotnet_nuget_packages()
+
+http_archive(
+    name = "spacewarp",
+    build_file_content = """exports_files([
+        "BepInEx/plugins/SpaceWarp/SpaceWarp.dll",
+        "BepInEx/core/BepInEx.dll"
+    ])""",
+    sha256 = "5e6c732d28b285975e5fdc62522a3aa233ce070be9275717d900e05877455ce8",
+    url = "https://github.com/SpaceWarpDev/SpaceWarp/releases/download/spacewarp-1.0.0/spacewarp-release-1.0.0.zip",
+)
+
+http_archive(
+    name = "krpc_core",
+    build_file_content = """exports_files([
+        "BepInEx/plugins/kRPC2/KRPC.Core.dll"
+    ])""",
+    sha256 = "bd40f6d744f3a4c93f20fe9e17d0b0fb424fa2053be273b7bbc7bffc8cbb2716",
+    url = "https://github.com/krpc/krpc2/releases/download/v0.1.0/krpc2-0.1.0.zip",
+)

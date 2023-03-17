@@ -1,0 +1,28 @@
+load("@rules_dotnet//dotnet:defs.bzl", "csharp_library", "import_dll")
+load("//lib:ksp.bzl", "ksp_libs")
+
+import_dll(
+    name = "BepInEx",
+    dll = "@spacewarp//:BepInEx/core/BepInEx.dll",
+)
+
+import_dll(
+    name = "SpaceWarp",
+    dll = "@spacewarp//:BepInEx/plugins/SpaceWarp/SpaceWarp.dll",
+)
+
+import_dll(
+    name = "KRPC.Core",
+    dll = "@krpc_core//:BepInEx/plugins/kRPC2/KRPC.Core.dll",
+)
+
+csharp_library(
+    name = "KRPC2",
+    srcs = glob(["**/*.cs"]),
+    target_frameworks = ["netstandard2.0"],
+    deps = [
+        ":BepInEx",
+        ":KRPC.Core",
+        ":SpaceWarp",
+    ] + ksp_libs,
+)

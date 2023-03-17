@@ -43,8 +43,6 @@ print(conn.space_center2.sealevel_altitude)
 
 ## Building
 
-To compile the project:
-
- * Copy all of the KSP2 DLLs, and the SpaceWarp DLLs into the external DLLs folder.
- * Copy the kRPC "core" DLLs (from the release page) to the krpc_dlls folder.
- * Use the KRPC.sln to build the project.
+ * Install Bazel
+ * Put a copy of KSP2 in lib/ksp2 (so you have lib/ksp2/KSP_x64_Data/...)
+ * Run `bazel build //server:KRPC`

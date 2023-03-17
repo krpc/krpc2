@@ -1,0 +1,37 @@
+load("@rules_dotnet//dotnet:defs.bzl", "import_dll")
+
+import_dll(
+    name = "mscorlib",
+    dll = ":ksp2/KSP2_x64_Data/Managed/mscorlib.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "System",
+    dll = ":ksp2/KSP2_x64_Data/Managed/System.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "System.Core",
+    dll = ":ksp2/KSP2_x64_Data/Managed/System.Core.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "UnityEngine.CoreModule",
+    dll = ":ksp2/KSP2_x64_Data/Managed/UnityEngine.CoreModule.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "UnityEngine",
+    dll = ":ksp2/KSP2_x64_Data/Managed/UnityEngine.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "Assembly-CSharp.dll",
+    dll = ":ksp2/KSP2_x64_Data/Managed/Assembly-CSharp.dll",
+    visibility = ["//visibility:public"],
+)
