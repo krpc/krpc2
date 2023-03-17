@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>netstandard20</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <NoStdLib>true</NoStdLib>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BepInEx">
+      <HintPath>..\..\bazel-krpc2\external\spacewarp\BepInEx\core\BepInEx.dll</HintPath>
+    </Reference>
+    <Reference Include="KRPC.Core">
+      <HintPath>..\..\bazel-krpc2\external\krpc_core\BepInEx\plugins\kRPC2\KRPC.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="SpaceWarp">
+      <HintPath>..\..\bazel-krpc2\external\spacewarp\BepInEx\plugins\SpaceWarp\SpaceWarp.dll</HintPath>
+    </Reference>
+    <Reference Include="mscorlib">
+      <HintPath>..\..\lib\ksp2\KSP2_x64_Data\Managed\mscorlib.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>..\..\lib\ksp2\KSP2_x64_Data\Managed\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>..\..\lib\ksp2\KSP2_x64_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <HintPath>..\..\lib\ksp2\KSP2_x64_Data\Managed\System.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>
