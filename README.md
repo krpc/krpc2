@@ -45,4 +45,4 @@ print(conn.space_center2.sealevel_altitude)
 
  * Install Bazel
  * Put a copy of KSP2 in lib/ksp2 (so you have lib/ksp2/KSP_x64_Data/...)
- * Run `bazel build //server:KRPC`
+ * Run `bazel build //server:KRPC2`
