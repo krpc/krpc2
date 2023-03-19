@@ -17,7 +17,7 @@ import_dll(
 )
 
 csharp_library(
-    name = "KRPC2",
+    name = "KRPC2.SpaceCenter",
     srcs = glob(["src/**/*.cs"]),
     target_frameworks = ["netstandard2.0"],
     visibility = ["//visibility:public"],
@@ -25,5 +25,6 @@ csharp_library(
         ":BepInEx",
         ":KRPC.Core",
         ":SpaceWarp",
+        "//server:KRPC2",
     ] + ksp_libs,
 )

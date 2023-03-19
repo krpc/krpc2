@@ -6,9 +6,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static KSP.Api.UIDataPropertyStrings.View;
 
-namespace KRPC2
+namespace KRPC2.SpaceCenter
 {
     [KRPCService(Id = 99)]
     public static class SpaceCenter2

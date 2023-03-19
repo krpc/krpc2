@@ -1,0 +1,17 @@
+load("@rules_dotnet//dotnet:defs.bzl", "csharp_library", "import_dll")
+load("@bazel_skylib//rules:copy_file.bzl", "copy_file")
+
+filegroup(
+    name = "krpc2",
+    srcs = [
+        ":KRPC.Core",
+        ":KRPC2",
+        ":KRPC2.SpaceCenter",
+    ],
+)
+
+copy_file("KRPC2", "//server:KRPC2", "KRPC2.dll")
+
+copy_file("KRPC2.SpaceCenter", "//service/SpaceCenter:KRPC2.SpaceCenter", "KRPC2.SpaceCenter.dll")
+
+copy_file("KRPC.Core", "@krpc_core//:BepInEx/plugins/kRPC2/KRPC.Core.dll", "KRPC.Core.dll")
