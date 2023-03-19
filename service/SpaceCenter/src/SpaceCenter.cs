@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace KRPC2.SpaceCenter
 {
     [KRPCService(Id = 99)]
-    public static class SpaceCenter2
+    public static class SpaceCenter
     {
         private static VesselComponent ActiveVessel => GameManager.Instance.Game.ViewController.GetActiveSimVessel(true);
 
