@@ -5,6 +5,13 @@ the game, and comes with client libraries for many popular languages.
 
 This is a continuation of the kRPC mod for Kerbal Space Program 1.
 
+## Links for more info
+
+ * [SpaceDock](https://spacedock.info/mod/3322/kRPC2)
+ * [Forum thread](https://forum.kerbalspaceprogram.com/index.php?/topic/214999-krpc2-control-the-game-using-python-c-c-java-lua/)
+ * [Discord](https://discord.gg/bXuaTrj)
+ * [Documentation for kRPC1](https://krpc.github.io/krpc)
+
 ## Installing
 
 Requires SpaceWarp/BepInEx to be installed.
@@ -34,12 +41,6 @@ print(conn.space_center2.vertical_surface_speed)
 print(conn.space_center2.terrain_altitude)
 print(conn.space_center2.sealevel_altitude)
 ```
-
-## Links for more info
-
- * [Documentation for kRPC1](https://krpc.github.io/krpc)
- * [SpaceDock](https://spacedock.info/mod/3322/kRPC2)
- * [Discord](https://discord.gg/bXuaTrj)
 
 ## Building on Linux
 
