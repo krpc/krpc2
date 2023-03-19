@@ -9,7 +9,9 @@ using System.Threading.Tasks;
 
 namespace KRPC2.SpaceCenter
 {
-    [KRPCService(Id = 99)]
+    // Note: named "SpaceCenter2" for now to not collide with the KSP1 service of the same name.
+    // We can change this once clients have proper namespacing for KSP1/2 services.
+    [KRPCService(Name = "SpaceCenter2", Id = 99)]
     public static class SpaceCenter
     {
         private static VesselComponent ActiveVessel => GameManager.Instance.Game.ViewController.GetActiveSimVessel(true);
