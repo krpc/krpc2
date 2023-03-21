@@ -1,3 +1,28 @@
 bazel-*
+
+# KSP2 DLLs
+lib/ksp2/*
+!lib/ksp2/README.txt
+
+# Visual Studio
+.vs/
+.localhistory/
 bin
 obj
+
+# NUNIT
+*.VisualState.xml
+TestResult.xml
+
+# NuGet
+*.nuget.props
+*.nuget.targets
+
+# Python
+__pycache__/
+*.pyc
+.env
+.venv
+
+# MSBuild Binary and Structured Log
+*.binlog
