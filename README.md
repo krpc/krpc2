@@ -11,7 +11,8 @@ This is a continuation of the kRPC mod for Kerbal Space Program 1.
  * [Forum thread](https://forum.kerbalspaceprogram.com/index.php?/topic/214999-krpc2-control-the-game-using-python-c-c-java-lua/)
  * [Discord](https://discord.gg/bXuaTrj)
  * [Documentation for kRPC1](https://krpc.github.io/krpc)
-
+ * [Contribution guide](https://github.com/krpc/krpc/blob/main/Contributing.md) (for kRPC1, but still applies here)
+ 
 ## Installing
 
 Requires SpaceWarp/BepInEx to be installed.
