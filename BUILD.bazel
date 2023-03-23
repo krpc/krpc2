@@ -36,3 +36,59 @@ import_dll(
     dll = "@spacewarp//:BepInEx/plugins/SpaceWarp/SpaceWarp.dll",
     visibility = ["//visibility:public"],
 )
+
+# Note: used to place generated files in known locations for .csproj files
+filegroup(
+    name = "csproj",
+    srcs = [
+        ":csproj_bepinex",
+        ":csproj_google_protobuf",
+        ":csproj_krpc2_assembly_info",
+        ":csproj_krpc2_spacecenter_assembly_info",
+        ":csproj_krpc_core",
+        ":csproj_krpc_io_ports",
+        ":csproj_spacewarp",
+    ],
+)
+
+copy_file(
+    "csproj_spacewarp",
+    "@spacewarp//:BepInEx/plugins/SpaceWarp/SpaceWarp.dll",
+    "csproj/SpaceWarp.dll",
+)
+
+copy_file(
+    "csproj_bepinex",
+    "@spacewarp//:BepInEx/core/BepInEx.dll",
+    "csproj/BepInEx.dll",
+)
+
+copy_file(
+    "csproj_krpc_core",
+    "@krpc_core//core",
+    "csproj/KRPC.Core.dll",
+)
+
+copy_file(
+    "csproj_google_protobuf",
+    "@krpc_core//:google_protobuf_dll",
+    "csproj/Google.Protobuf.dll",
+)
+
+copy_file(
+    "csproj_krpc_io_ports",
+    "@krpc_core//:krpc_io_ports_dll",
+    "csproj/KRPC.IO.Ports.dll",
+)
+
+copy_file(
+    "csproj_krpc2_assembly_info",
+    "//server:assembly_info",
+    "csproj/server/src/AssemblyInfo.cs",
+)
+
+copy_file(
+    "csproj_krpc2_spacecenter_assembly_info",
+    "//service/spacecenter:assembly_info",
+    "csproj/service/spacecenter/src/AssemblyInfo.cs",
+)
