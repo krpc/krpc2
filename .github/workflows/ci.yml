@@ -1,0 +1,61 @@
+name: ci
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build-krpc2-linux:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/krpc/buildenv:3.1.0
+      credentials:
+        username: ${{ github.actor }}
+        password: ${{ secrets.github_token }}
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+      - name: fetch
+        uses: krpc/krpc-core/.github/actions/bazel-fetch@main
+      - name: build
+        run: bazel build //:krpc2
+
+  build-krpc2-windows:
+    runs-on: windows-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+      - name: build
+        run: bazel --bazelrc=.github/workflows/bazelrc build //:krpc2
+
+  build-krpc2-sln-linux:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/krpc/buildenv:3.1.0
+      credentials:
+        username: ${{ github.actor }}
+        password: ${{ secrets.github_token }}
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+      - name: fetch
+        uses: krpc/krpc-core/.github/actions/bazel-fetch@main
+      - name: deps
+        run: bazel build //:csproj
+      - name: build
+        run: dotnet build KRPC.Core.sln
+
+  build-krpc2-sln-windows:
+    runs-on: windows-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+      - name: deps
+        run: bazel --bazelrc=.github/workflows/bazelrc build //:csproj
+      - name: build
+        run: dotnet build KRPC.Core.sln
