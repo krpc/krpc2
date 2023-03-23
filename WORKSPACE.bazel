@@ -13,7 +13,7 @@ bazel_skylib_workspace()
 
 git_repository(
     name = "rules_dotnet",
-    commit = "7f7431f645cbf0e11df43f5782967cafbad1afb0",
+    commit = "3307f446df6e299891d524c9a2c2118c59f3919f",
     remote = "https://github.com/djungelorm/rules_dotnet.git",
 )
 
@@ -48,14 +48,10 @@ load("@build_stack_rules_proto//deps:protobuf_core_deps.bzl", "protobuf_core_dep
 
 protobuf_core_deps()
 
-# git_repository(
-#     name = "krpc_core",
-#     remote = "https://github.com/krpc/krpc-core",
-#     branch = "main",
-# )
-local_repository(
+git_repository(
     name = "krpc_core",
-    path = "../krpc-core",
+    remote = "https://github.com/krpc/krpc-core",
+    commit = "122fd20cd0b9e1fb18b0b08c2692f518c20de5c1",
 )
 
 load("@krpc_core//:workspace.bzl", "krpc_core_prebuilt_protoc", "krpc_core_workspace")
