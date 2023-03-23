@@ -1,4 +1,4 @@
-load("@rules_dotnet//dotnet:defs.bzl", "csharp_library", "import_dll")
+load("@rules_dotnet//dotnet:defs.bzl", "import_dll")
 load("@bazel_skylib//rules:copy_file.bzl", "copy_file")
 
 filegroup(
@@ -13,17 +13,41 @@ filegroup(
     ],
 )
 
-copy_file("copy_krpc_core", "@krpc_core//core", "kRPC2/KRPC.Core.dll")
+copy_file(
+    name = "copy_krpc_core",
+    src = "@krpc_core//core",
+    out = "kRPC2/KRPC.Core.dll",
+)
 
-copy_file("copy_krpc2", "//server", "kRPC2/KRPC2.dll")
+copy_file(
+    name = "copy_krpc2",
+    src = "//server",
+    out = "kRPC2/KRPC2.dll",
+)
 
-copy_file("copy_krpc2_swinfo", "//server:swinfo", "kRPC2/swinfo.json")
+copy_file(
+    name = "copy_krpc2_swinfo",
+    src = "//server:swinfo",
+    out = "kRPC2/swinfo.json",
+)
 
-copy_file("copy_krpc2_spacecenter", "//service/spacecenter", "kRPC2/KRPC2.SpaceCenter.dll")
+copy_file(
+    name = "copy_krpc2_spacecenter",
+    src = "//service/spacecenter",
+    out = "kRPC2/KRPC2.SpaceCenter.dll",
+)
 
-copy_file("copy_google_protobuf", "@krpc_core//:google_protobuf_dll", "kRPC2/Google.Protobuf.dll")
+copy_file(
+    name = "copy_google_protobuf",
+    src = "@krpc_core//:google_protobuf_dll",
+    out = "kRPC2/Google.Protobuf.dll",
+)
 
-copy_file("copy_krpc_io_ports", "@krpc_core//:krpc_io_ports_dll", "kRPC2/KRPC.IO.Ports.dll")
+copy_file(
+    name = "copy_krpc_io_ports",
+    src = "@krpc_core//:krpc_io_ports_dll",
+    out = "kRPC2/KRPC.IO.Ports.dll",
+)
 
 import_dll(
     name = "bepinex",
@@ -52,43 +76,43 @@ filegroup(
 )
 
 copy_file(
-    "csproj_spacewarp",
-    "@spacewarp//:BepInEx/plugins/SpaceWarp/SpaceWarp.dll",
-    "csproj/SpaceWarp.dll",
+    name = "csproj_spacewarp",
+    src = "@spacewarp//:BepInEx/plugins/SpaceWarp/SpaceWarp.dll",
+    out = "csproj/SpaceWarp.dll",
 )
 
 copy_file(
-    "csproj_bepinex",
-    "@spacewarp//:BepInEx/core/BepInEx.dll",
-    "csproj/BepInEx.dll",
+    name = "csproj_bepinex",
+    src = "@spacewarp//:BepInEx/core/BepInEx.dll",
+    out = "csproj/BepInEx.dll",
 )
 
 copy_file(
-    "csproj_krpc_core",
-    "@krpc_core//core",
-    "csproj/KRPC.Core.dll",
+    name = "csproj_krpc_core",
+    src = "@krpc_core//core",
+    out = "csproj/KRPC.Core.dll",
 )
 
 copy_file(
-    "csproj_google_protobuf",
-    "@krpc_core//:google_protobuf_dll",
-    "csproj/Google.Protobuf.dll",
+    name = "csproj_google_protobuf",
+    src = "@krpc_core//:google_protobuf_dll",
+    out = "csproj/Google.Protobuf.dll",
 )
 
 copy_file(
-    "csproj_krpc_io_ports",
-    "@krpc_core//:krpc_io_ports_dll",
-    "csproj/KRPC.IO.Ports.dll",
+    name = "csproj_krpc_io_ports",
+    src = "@krpc_core//:krpc_io_ports_dll",
+    out = "csproj/KRPC.IO.Ports.dll",
 )
 
 copy_file(
-    "csproj_krpc2_assembly_info",
-    "//server:assembly_info",
-    "csproj/server/src/AssemblyInfo.cs",
+    name = "csproj_krpc2_assembly_info",
+    src = "//server:assembly_info",
+    out = "csproj/server/src/AssemblyInfo.cs",
 )
 
 copy_file(
-    "csproj_krpc2_spacecenter_assembly_info",
-    "//service/spacecenter:assembly_info",
-    "csproj/service/spacecenter/src/AssemblyInfo.cs",
+    name = "csproj_krpc2_spacecenter_assembly_info",
+    src = "//service/spacecenter:assembly_info",
+    out = "csproj/service/spacecenter/src/AssemblyInfo.cs",
 )

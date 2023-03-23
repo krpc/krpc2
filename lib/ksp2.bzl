@@ -1,4 +1,6 @@
-ksp2_libs = [
+" KSP2 dependencies "
+
+ksp2_deps = [
     "//lib:Mono.Data.Sqlite",
     "//lib:UnityEngine.UnityWebRequestWWWModule",
     "//lib:UnityEngine.UI",
