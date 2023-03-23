@@ -1,4 +1,5 @@
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
+load("@bazel_tools//tools/build_defs/repo:git.bzl", "git_repository")
 
 http_archive(
     name = "bazel_skylib",
@@ -10,11 +11,10 @@ load("@bazel_skylib//:workspace.bzl", "bazel_skylib_workspace")
 
 bazel_skylib_workspace()
 
-http_archive(
+git_repository(
     name = "rules_dotnet",
-    sha256 = "e20b2994bb379c58b3b6a5de75a070e76ccff1ce242422ea95874c1c0ad62f69",
-    strip_prefix = "rules_dotnet-0.8.7",
-    url = "https://github.com/bazelbuild/rules_dotnet/releases/download/v0.8.7/rules_dotnet-v0.8.7.tar.gz",
+    commit = "7f7431f645cbf0e11df43f5782967cafbad1afb0",
+    remote = "https://github.com/djungelorm/rules_dotnet.git",
 )
 
 load(
@@ -31,21 +31,50 @@ load("@rules_dotnet//dotnet:rules_dotnet_nuget_packages.bzl", "rules_dotnet_nuge
 
 rules_dotnet_nuget_packages()
 
-http_archive(
-    name = "spacewarp",
-    build_file_content = """exports_files([
-        "BepInEx/plugins/SpaceWarp/SpaceWarp.dll",
-        "BepInEx/core/BepInEx.dll"
-    ])""",
-    sha256 = "5e6c732d28b285975e5fdc62522a3aa233ce070be9275717d900e05877455ce8",
-    url = "https://github.com/SpaceWarpDev/SpaceWarp/releases/download/spacewarp-1.0.0/spacewarp-release-1.0.0.zip",
-)
+load("@rules_dotnet//dotnet:paket2bazel_dependencies.bzl", "paket2bazel_dependencies")
+
+paket2bazel_dependencies()
 
 http_archive(
+    name = "build_stack_rules_proto",
+    sha256 = "ac7e2966a78660e83e1ba84a06db6eda9a7659a841b6a7fd93028cd8757afbfb",
+    strip_prefix = "rules_proto-2.0.1",
+    urls = ["https://github.com/stackb/rules_proto/archive/v2.0.1.tar.gz"],
+)
+
+register_toolchains("@build_stack_rules_proto//toolchain:prebuilt")
+
+load("@build_stack_rules_proto//deps:protobuf_core_deps.bzl", "protobuf_core_deps")
+
+protobuf_core_deps()
+
+# git_repository(
+#     name = "krpc_core",
+#     remote = "https://github.com/krpc/krpc-core",
+#     branch = "main",
+# )
+local_repository(
     name = "krpc_core",
-    build_file_content = """exports_files([
-        "BepInEx/plugins/kRPC2/KRPC.Core.dll"
-    ])""",
-    sha256 = "bd40f6d744f3a4c93f20fe9e17d0b0fb424fa2053be273b7bbc7bffc8cbb2716",
-    url = "https://github.com/krpc/krpc2/releases/download/v0.1.0/krpc2-0.1.0.zip",
+    path = "../krpc-core",
+)
+
+load("@krpc_core//:workspace.bzl", "krpc_core_prebuilt_protoc", "krpc_core_workspace")
+
+krpc_core_workspace()
+
+krpc_core_prebuilt_protoc()
+
+load("@krpc_core//deps:paket.bzl", "paket")
+
+paket()
+
+http_archive(
+    name = "spacewarp",
+    build_file_content = """
+exports_files([
+    "BepInEx/plugins/SpaceWarp/SpaceWarp.dll",
+    "BepInEx/core/BepInEx.dll"
+])""",
+    sha256 = "64f1e567774974fbd1c7beb861f329610bd48b74603caf8c626bd4261d7e4f83",
+    url = "https://github.com/SpaceWarpDev/SpaceWarp/releases/download/spacewarp-1.0.1/spacewarp-release-1.0.1.zip",
 )

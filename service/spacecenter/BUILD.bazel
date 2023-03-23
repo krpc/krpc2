@@ -4,15 +4,16 @@ load("//lib:ksp2.bzl", "ksp2_libs")
 load("//:config.bzl", "version")
 
 csharp_library(
-    name = "server",
+    name = "spacecenter",
     srcs = [":assembly_info"] + glob(["src/**/*.cs"]),
-    out = "KRPC2",
+    out = "KRPC2.SpaceCenter",
     private_deps = ksp2_libs,
     target_frameworks = ["netstandard2.1"],
     visibility = ["//visibility:public"],
     deps = [
         "//:bepinex",
         "//:spacewarp",
+        "//server",
         "@krpc_core//core",
     ],
 )
@@ -22,13 +23,5 @@ expand_template(
     out = "src/AssemblyInfo.cs",
     substitutions = {"{VERSION}": version},
     template = "src/AssemblyInfo.cs.tmpl",
-    visibility = ["//visibility:public"],
-)
-
-expand_template(
-    name = "swinfo",
-    out = "swinfo.json",
-    substitutions = {"{VERSION}": version},
-    template = "swinfo.json.tmpl",
     visibility = ["//visibility:public"],
 )
