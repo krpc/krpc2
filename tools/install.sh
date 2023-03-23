@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -ev
-
-bazel build //server:KRPC2
-cp bazel-bin/server/bazelout/netstandard2.0/KRPC2.dll lib/ksp2/BepInEx/plugins/kRPC
+bazel build //:krpc2
+rm -rf lib/ksp2/BepInEx/plugins/kRPC2
+cp -r bazel-bin/kRPC2 lib/ksp2/BepInEx/plugins/
+chmod 0664 lib/ksp2/BepInEx/plugins/kRPC2/*

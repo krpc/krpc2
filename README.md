@@ -1,9 +1,11 @@
-# kRPC2
+# kRPC2 - Remote Procedure Calls for Kerbal Space Program 2
+
+[![ci](https://github.com/krpc/krpc2/actions/workflows/ci.yml/badge.svg)](https://github.com/krpc/krpc2/actions/workflows/ci.yml)
 
 kRPC2 allows you to control Kerbal Space Program 2 from scripts running outside of
 the game, and comes with client libraries for many popular languages.
 
-This is a continuation of the kRPC mod for Kerbal Space Program 1.
+This is a continuation of the kRPC mod for Kerbal Space Program 1, which can be found here: https://github.com/krpc/krpc
 
 ## Links for more info
 
@@ -11,8 +13,7 @@ This is a continuation of the kRPC mod for Kerbal Space Program 1.
  * [Forum thread](https://forum.kerbalspaceprogram.com/index.php?/topic/214999-krpc2-control-the-game-using-python-c-c-java-lua/)
  * [Discord](https://discord.gg/bXuaTrj)
  * [Documentation for kRPC1](https://krpc.github.io/krpc)
- * [Contribution guide](https://github.com/krpc/krpc/blob/main/Contributing.md) (for kRPC1, but still applies here)
- 
+
 ## Installing
 
 Requires SpaceWarp/BepInEx to be installed.
@@ -43,16 +44,23 @@ print(conn.space_center2.terrain_altitude)
 print(conn.space_center2.sealevel_altitude)
 ```
 
+## Development
+
+This mod is in the early stages of development - there is lots to do and help is greatly appreciated!
+
+Also check out the [contribution guide](https://github.com/krpc/krpc/blob/main/Contributing.md) (for kRPC1, but still applies here).
+
 ## Building on Linux
 
  * [Install Bazel](https://bazel.build/install/)
  * Create a symlink from `lib/ksp2` to where you have Kerbal Space Program 2 installed, so that you have `lib/ksp2/KSP_x64_Data/Managed/...`
  * Run `bazel build //:krpc2`
- * The resulting DLLs are placed in the `bazel-bin` directory
+ * The resulting plugin files placed in the `bazel-bin/kRPC` directory
 
 ## Building on Windows
 
  * [Install Bazel](https://bazel.build/install/)
+   * Ensure you install MSYS2 to C:\tools\msys64 NOT the default path
    * If your user directory contains spaces, the build may not work. If this is the case, create a file called
      `%ProgramData%/bazel.bazelrc` containing the following:
      ```
@@ -61,4 +69,4 @@ print(conn.space_center2.sealevel_altitude)
    * If you get permissions errors related to symlinks when building you need to enable "Developer Mode".
  * Put a copy of KSP2 in lib/ksp2 (so you have `lib/ksp2/KSP_x64_Data/Managed/...`)
  * Run `bazel build //:krpc2`
- * The resulting DLLs are placed in the `bazel-bin` directory
+ * The resulting plugin files are placed in the `bazel-bin/kRPC` directory

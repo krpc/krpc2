@@ -10,20 +10,17 @@ using System.Net;
 
 namespace KRPC2
 {
-    [BepInPlugin("krpc", "krpc2", "0.1.0")]
+    [BepInPlugin("krpc2", "krpc2", "0.1.0")]
     [BepInDependency(SpaceWarpPlugin.ModGuid, SpaceWarpPlugin.ModVer)]
     public class KRPC2 : BaseSpaceWarpPlugin
     {
         private Core core;
-        public override void OnInitialized()
+        public override void OnPostInitialized()
         {
-            Logger.LogInfo("Scanning for services...");
-            KRPC.Service.Scanner.Scanner.GetServices();
-            Logger.LogInfo("Scanning complete");
-
             Logger.LogInfo("Initializing core...");
             core = Core.Instance;
-            CallContext.SetGameScene(GameScene.SpaceCenter);
+            CallContext.GameScene = GameScene.SpaceCenter;
+            // FIXME: need to add handlers for game pausing and unpausing
             core.OnClientRequestingConnection += (s, e) => e.Request.Allow();
             Logger.LogInfo("Core initialized");
 
@@ -40,7 +37,8 @@ namespace KRPC2
 
         public void Update()
         {
-            core.Update();
+            if (core != null)
+                core.Update();
         }
     }
 }

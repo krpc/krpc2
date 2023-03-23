@@ -1,8 +1,7 @@
 bazel-*
 
-# KSP2 DLLs
-lib/ksp2/*
-!lib/ksp2/README.txt
+# KSP2
+lib/ksp2
 
 # Visual Studio
 .vs/

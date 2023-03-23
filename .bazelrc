@@ -1,2 +1,6 @@
+# Windows support
 startup --windows_enable_symlinks
 build --enable_runfiles
+
+# pre-built protoc
+build --proto_compiler="@build_stack_rules_proto//toolchain:protoc.exe"
