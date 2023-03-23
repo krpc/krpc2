@@ -1,14 +1,11 @@
 ﻿using SpaceWarp;
 using SpaceWarp.API.Mods;
 using BepInEx;
-using KRPC.Service.Attributes;
+using System;
 using KSP.Game;
 using KSP.Sim.impl;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using KRPC.Service;
+using KRPC.Service.Attributes;
 
 namespace KRPC2.SpaceCenter
 {
@@ -24,18 +21,17 @@ namespace KRPC2.SpaceCenter
     [KRPCService(Name = "SpaceCenter2", Id = 99)]
     public static class SpaceCenter
     {
-        private static VesselComponent ActiveVessel => GameManager.Instance.Game.ViewController.GetActiveSimVessel(true);
+        private static VesselComponent InternalActiveVessel => GameManager.Instance.Game.ViewController.GetActiveSimVessel(true);
 
-        [KRPCProperty]
-        public static double HorizontalSurfaceSpeed => ActiveVessel.HorizontalSrfSpeed;
-
-        [KRPCProperty]
-        public static double VerticalSurfaceSpeed => ActiveVessel.VerticalSrfSpeed;
-
-        [KRPCProperty]
-        public static double TerrainAltitude => ActiveVessel.AltitudeFromTerrain;
-
-        [KRPCProperty]
-        public static double SealevelAltitude => ActiveVessel.AltitudeFromSeaLevel;
+        /// <summary>
+        /// The currently active vessel.
+        /// </summary>
+        [KRPCProperty (GameScene = GameScene.Flight)]
+        public static Vessel ActiveVessel {
+            get { return new Vessel (InternalActiveVessel); }
+            set {
+                throw new NotImplementedException();
+            }
+        }
     }
 }
