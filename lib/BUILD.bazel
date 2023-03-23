@@ -1,26 +1,38 @@
 load("@rules_dotnet//dotnet:defs.bzl", "import_dll")
 
 import_dll(
-    name = "mscorlib",
-    dll = ":ksp2/KSP2_x64_Data/Managed/mscorlib.dll",
+    name = "Mono.Data.Sqlite",
+    dll = ":ksp2/KSP2_x64_Data/Managed/Mono.Data.Sqlite.dll",
     visibility = ["//visibility:public"],
 )
 
 import_dll(
-    name = "System",
-    dll = ":ksp2/KSP2_x64_Data/Managed/System.dll",
+    name = "UnityEngine.UnityWebRequestWWWModule",
+    dll = ":ksp2/KSP2_x64_Data/Managed/UnityEngine.UnityWebRequestWWWModule.dll",
     visibility = ["//visibility:public"],
 )
 
 import_dll(
-    name = "System.Core",
-    dll = ":ksp2/KSP2_x64_Data/Managed/System.Core.dll",
+    name = "UnityEngine.UI",
+    dll = ":ksp2/KSP2_x64_Data/Managed/UnityEngine.UI.dll",
     visibility = ["//visibility:public"],
 )
 
 import_dll(
-    name = "UnityEngine.CoreModule",
-    dll = ":ksp2/KSP2_x64_Data/Managed/UnityEngine.CoreModule.dll",
+    name = "System.IO.Compression",
+    dll = ":ksp2/KSP2_x64_Data/Managed/System.IO.Compression.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "Unity.Burst.Cecil.Mdb",
+    dll = ":ksp2/KSP2_x64_Data/Managed/Unity.Burst.Cecil.Mdb.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "Mono.Security",
+    dll = ":ksp2/KSP2_x64_Data/Managed/Mono.Security.dll",
     visibility = ["//visibility:public"],
 )
 
@@ -31,7 +43,901 @@ import_dll(
 )
 
 import_dll(
-    name = "Assembly-CSharp.dll",
+    name = "UnityEngine.SpriteMaskModule",
+    dll = ":ksp2/KSP2_x64_Data/Managed/UnityEngine.SpriteMaskModule.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "UnityEngine.UnityWebRequestModule",
+    dll = ":ksp2/KSP2_x64_Data/Managed/UnityEngine.UnityWebRequestModule.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "USD.NET",
+    dll = ":ksp2/KSP2_x64_Data/Managed/USD.NET.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "DataLink.Shared.Net",
+    dll = ":ksp2/KSP2_x64_Data/Managed/DataLink.Shared.Net.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "Newtonsoft.Json",
+    dll = ":ksp2/KSP2_x64_Data/Managed/Newtonsoft.Json.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "Unity.MemoryProfiler",
+    dll = ":ksp2/KSP2_x64_Data/Managed/Unity.MemoryProfiler.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "DOTweenPro",
+    dll = ":ksp2/KSP2_x64_Data/Managed/DOTweenPro.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "UnityEngine.TerrainPhysicsModule",
+    dll = ":ksp2/KSP2_x64_Data/Managed/UnityEngine.TerrainPhysicsModule.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "UnityEngine.UIElementsNativeModule",
+    dll = ":ksp2/KSP2_x64_Data/Managed/UnityEngine.UIElementsNativeModule.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "UnityEngine.PerformanceReportingModule",
+    dll = ":ksp2/KSP2_x64_Data/Managed/UnityEngine.PerformanceReportingModule.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "UnityEngine.Physics2DModule",
+    dll = ":ksp2/KSP2_x64_Data/Managed/UnityEngine.Physics2DModule.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "System.IO.Compression.FileSystem",
+    dll = ":ksp2/KSP2_x64_Data/Managed/System.IO.Compression.FileSystem.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "UnityEngine.TextCoreModule",
+    dll = ":ksp2/KSP2_x64_Data/Managed/UnityEngine.TextCoreModule.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "Unity.Jobs",
+    dll = ":ksp2/KSP2_x64_Data/Managed/Unity.Jobs.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "TrackIRUnity",
+    dll = ":ksp2/KSP2_x64_Data/Managed/TrackIRUnity.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "UnityEngine.UnityTestProtocolModule",
+    dll = ":ksp2/KSP2_x64_Data/Managed/UnityEngine.UnityTestProtocolModule.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "UnityEngine.GameCenterModule",
+    dll = ":ksp2/KSP2_x64_Data/Managed/UnityEngine.GameCenterModule.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "System.Xml.XPath.XDocument",
+    dll = ":ksp2/KSP2_x64_Data/Managed/System.Xml.XPath.XDocument.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "UnityEngine.GridModule",
+    dll = ":ksp2/KSP2_x64_Data/Managed/UnityEngine.GridModule.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "AK.Wwise.Unity.Timeline",
+    dll = ":ksp2/KSP2_x64_Data/Managed/AK.Wwise.Unity.Timeline.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "System.Net.Http",
+    dll = ":ksp2/KSP2_x64_Data/Managed/System.Net.Http.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "System.Runtime.Serialization",
+    dll = ":ksp2/KSP2_x64_Data/Managed/System.Runtime.Serialization.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "UnityEngine.SpatialTracking",
+    dll = ":ksp2/KSP2_x64_Data/Managed/UnityEngine.SpatialTracking.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "System.Security",
+    dll = ":ksp2/KSP2_x64_Data/Managed/System.Security.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "Mono.WebBrowser",
+    dll = ":ksp2/KSP2_x64_Data/Managed/Mono.WebBrowser.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "UnityEngine.VehiclesModule",
+    dll = ":ksp2/KSP2_x64_Data/Managed/UnityEngine.VehiclesModule.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "Unity.TextMeshPro",
+    dll = ":ksp2/KSP2_x64_Data/Managed/Unity.TextMeshPro.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "UnityEngine.ARModule",
+    dll = ":ksp2/KSP2_x64_Data/Managed/UnityEngine.ARModule.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "Unity.Collections.LowLevel.ILSupport",
+    dll = ":ksp2/KSP2_x64_Data/Managed/Unity.Collections.LowLevel.ILSupport.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "UnityEngine.AssetBundleModule",
+    dll = ":ksp2/KSP2_x64_Data/Managed/UnityEngine.AssetBundleModule.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "Unity.Timeline",
+    dll = ":ksp2/KSP2_x64_Data/Managed/Unity.Timeline.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "System.Windows.Forms",
+    dll = ":ksp2/KSP2_x64_Data/Managed/System.Windows.Forms.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "AK.Wwise.Unity.API",
+    dll = ":ksp2/KSP2_x64_Data/Managed/AK.Wwise.Unity.API.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "UnityEngine.JSONSerializeModule",
+    dll = ":ksp2/KSP2_x64_Data/Managed/UnityEngine.JSONSerializeModule.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "PriorityQueue",
+    dll = ":ksp2/KSP2_x64_Data/Managed/PriorityQueue.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "UnityEngine.TextRenderingModule",
+    dll = ":ksp2/KSP2_x64_Data/Managed/UnityEngine.TextRenderingModule.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "UnityEngine.StreamingModule",
+    dll = ":ksp2/KSP2_x64_Data/Managed/UnityEngine.StreamingModule.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "UnityEngine.AIModule",
+    dll = ":ksp2/KSP2_x64_Data/Managed/UnityEngine.AIModule.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "System.Configuration",
+    dll = ":ksp2/KSP2_x64_Data/Managed/System.Configuration.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "UnityEngine.ScreenCaptureModule",
+    dll = ":ksp2/KSP2_x64_Data/Managed/UnityEngine.ScreenCaptureModule.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "UnityEngine.TLSModule",
+    dll = ":ksp2/KSP2_x64_Data/Managed/UnityEngine.TLSModule.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "UnityEngine.AccessibilityModule",
+    dll = ":ksp2/KSP2_x64_Data/Managed/UnityEngine.AccessibilityModule.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "UnityEngine.UNETModule",
+    dll = ":ksp2/KSP2_x64_Data/Managed/UnityEngine.UNETModule.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "UnityEngine.DirectorModule",
+    dll = ":ksp2/KSP2_x64_Data/Managed/UnityEngine.DirectorModule.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "UnityEngine.HotReloadModule",
+    dll = ":ksp2/KSP2_x64_Data/Managed/UnityEngine.HotReloadModule.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "UnityEngine.ImageConversionModule",
+    dll = ":ksp2/KSP2_x64_Data/Managed/UnityEngine.ImageConversionModule.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "UnityEngine.UnityConnectModule",
+    dll = ":ksp2/KSP2_x64_Data/Managed/UnityEngine.UnityConnectModule.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "System.Transactions",
+    dll = ":ksp2/KSP2_x64_Data/Managed/System.Transactions.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "UnityEngine.UnityWebRequestAudioModule",
+    dll = ":ksp2/KSP2_x64_Data/Managed/UnityEngine.UnityWebRequestAudioModule.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "UnityEngine.UIElementsModule",
+    dll = ":ksp2/KSP2_x64_Data/Managed/UnityEngine.UIElementsModule.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "Unity.Addressables",
+    dll = ":ksp2/KSP2_x64_Data/Managed/Unity.Addressables.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "UnityEngine.ClothModule",
+    dll = ":ksp2/KSP2_x64_Data/Managed/UnityEngine.ClothModule.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "UnityEngine.ClusterRendererModule",
+    dll = ":ksp2/KSP2_x64_Data/Managed/UnityEngine.ClusterRendererModule.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "UnityEngine.AudioModule",
+    dll = ":ksp2/KSP2_x64_Data/Managed/UnityEngine.AudioModule.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "UnityEngine.VRModule",
+    dll = ":ksp2/KSP2_x64_Data/Managed/UnityEngine.VRModule.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "com.rlabrecque.steamworks.net",
+    dll = ":ksp2/KSP2_x64_Data/Managed/com.rlabrecque.steamworks.net.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "UnityEngine.ParticleSystemModule",
+    dll = ":ksp2/KSP2_x64_Data/Managed/UnityEngine.ParticleSystemModule.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "AK.Wwise.Unity.MonoBehaviour",
+    dll = ":ksp2/KSP2_x64_Data/Managed/AK.Wwise.Unity.MonoBehaviour.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "System.Web.ApplicationServices",
+    dll = ":ksp2/KSP2_x64_Data/Managed/System.Web.ApplicationServices.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "UnityEngine.InputLegacyModule",
+    dll = ":ksp2/KSP2_x64_Data/Managed/UnityEngine.InputLegacyModule.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "System.Xml.Linq",
+    dll = ":ksp2/KSP2_x64_Data/Managed/System.Xml.Linq.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "mscorlib",
+    dll = ":ksp2/KSP2_x64_Data/Managed/mscorlib.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "Unity.Burst.Cecil.Pdb",
+    dll = ":ksp2/KSP2_x64_Data/Managed/Unity.Burst.Cecil.Pdb.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule",
+    dll = ":ksp2/KSP2_x64_Data/Managed/UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "Unity.InputSystem",
+    dll = ":ksp2/KSP2_x64_Data/Managed/Unity.InputSystem.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "Unity.Burst.Unsafe",
+    dll = ":ksp2/KSP2_x64_Data/Managed/Unity.Burst.Unsafe.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "UnityEngine.UmbraModule",
+    dll = ":ksp2/KSP2_x64_Data/Managed/UnityEngine.UmbraModule.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "Unity.Analytics.DataPrivacy",
+    dll = ":ksp2/KSP2_x64_Data/Managed/Unity.Analytics.DataPrivacy.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "UnityEngine.WindModule",
+    dll = ":ksp2/KSP2_x64_Data/Managed/UnityEngine.WindModule.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "Moq",
+    dll = ":ksp2/KSP2_x64_Data/Managed/Moq.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "UnityEngine.TerrainModule",
+    dll = ":ksp2/KSP2_x64_Data/Managed/UnityEngine.TerrainModule.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "Unity.Collections",
+    dll = ":ksp2/KSP2_x64_Data/Managed/Unity.Collections.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "System.Drawing",
+    dll = ":ksp2/KSP2_x64_Data/Managed/System.Drawing.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "nunit.framework",
+    dll = ":ksp2/KSP2_x64_Data/Managed/nunit.framework.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "Unity.ScriptableBuildPipeline",
+    dll = ":ksp2/KSP2_x64_Data/Managed/Unity.ScriptableBuildPipeline.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "UnityEngine.LocalizationModule",
+    dll = ":ksp2/KSP2_x64_Data/Managed/UnityEngine.LocalizationModule.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "Intercept.Metrics",
+    dll = ":ksp2/KSP2_x64_Data/Managed/Intercept.Metrics.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "UnityEngine.GIModule",
+    dll = ":ksp2/KSP2_x64_Data/Managed/UnityEngine.GIModule.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "UnityEngine.UnityWebRequestAssetBundleModule",
+    dll = ":ksp2/KSP2_x64_Data/Managed/UnityEngine.UnityWebRequestAssetBundleModule.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "DOTween",
+    dll = ":ksp2/KSP2_x64_Data/Managed/DOTween.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "UnityEngine.ClusterInputModule",
+    dll = ":ksp2/KSP2_x64_Data/Managed/UnityEngine.ClusterInputModule.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "UnityEngine.UnityWebRequestTextureModule",
+    dll = ":ksp2/KSP2_x64_Data/Managed/UnityEngine.UnityWebRequestTextureModule.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "UnityEngine.UnityCurlModule",
+    dll = ":ksp2/KSP2_x64_Data/Managed/UnityEngine.UnityCurlModule.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "UnityEngine.UIModule",
+    dll = ":ksp2/KSP2_x64_Data/Managed/UnityEngine.UIModule.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "UnityEngine.TilemapModule",
+    dll = ":ksp2/KSP2_x64_Data/Managed/UnityEngine.TilemapModule.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "Newtonsoft.Json.UnityConverters",
+    dll = ":ksp2/KSP2_x64_Data/Managed/Newtonsoft.Json.UnityConverters.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "UnityEngine.CoreModule",
+    dll = ":ksp2/KSP2_x64_Data/Managed/UnityEngine.CoreModule.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "System.Runtime.Serialization.Xml",
+    dll = ":ksp2/KSP2_x64_Data/Managed/System.Runtime.Serialization.Xml.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "System.Web",
+    dll = ":ksp2/KSP2_x64_Data/Managed/System.Web.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "UnityEngine.ProfilerModule",
+    dll = ":ksp2/KSP2_x64_Data/Managed/UnityEngine.ProfilerModule.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "UnityEngine.XRModule",
+    dll = ":ksp2/KSP2_x64_Data/Managed/UnityEngine.XRModule.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "System.Data",
+    dll = ":ksp2/KSP2_x64_Data/Managed/System.Data.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "UnityEngine.XR.LegacyInputHelpers",
+    dll = ":ksp2/KSP2_x64_Data/Managed/UnityEngine.XR.LegacyInputHelpers.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "System.Core",
+    dll = ":ksp2/KSP2_x64_Data/Managed/System.Core.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "UnityEngine.SubsystemsModule",
+    dll = ":ksp2/KSP2_x64_Data/Managed/UnityEngine.SubsystemsModule.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "Assembly-CSharp-firstpass",
+    dll = ":ksp2/KSP2_x64_Data/Managed/Assembly-CSharp-firstpass.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "Unity.Burst",
+    dll = ":ksp2/KSP2_x64_Data/Managed/Unity.Burst.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "DemiLib",
+    dll = ":ksp2/KSP2_x64_Data/Managed/DemiLib.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "UnityEngine.SharedInternalsModule",
+    dll = ":ksp2/KSP2_x64_Data/Managed/UnityEngine.SharedInternalsModule.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "System",
+    dll = ":ksp2/KSP2_x64_Data/Managed/System.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "System.ServiceModel.Internals",
+    dll = ":ksp2/KSP2_x64_Data/Managed/System.ServiceModel.Internals.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "Assembly-CSharp",
     dll = ":ksp2/KSP2_x64_Data/Managed/Assembly-CSharp.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "USD.NET.Unity",
+    dll = ":ksp2/KSP2_x64_Data/Managed/USD.NET.Unity.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "Backtrace.Unity",
+    dll = ":ksp2/KSP2_x64_Data/Managed/Backtrace.Unity.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "UnityEngine.VirtualTexturingModule",
+    dll = ":ksp2/KSP2_x64_Data/Managed/UnityEngine.VirtualTexturingModule.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "Unity.ResourceManager",
+    dll = ":ksp2/KSP2_x64_Data/Managed/Unity.ResourceManager.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "UnityEngine.AndroidJNIModule",
+    dll = ":ksp2/KSP2_x64_Data/Managed/UnityEngine.AndroidJNIModule.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "System.Runtime",
+    dll = ":ksp2/KSP2_x64_Data/Managed/System.Runtime.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "System.Globalization.Extensions",
+    dll = ":ksp2/KSP2_x64_Data/Managed/System.Globalization.Extensions.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "System.DirectoryServices",
+    dll = ":ksp2/KSP2_x64_Data/Managed/System.DirectoryServices.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "Mortoc.Compute.TestTools",
+    dll = ":ksp2/KSP2_x64_Data/Managed/Mortoc.Compute.TestTools.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "System.ComponentModel.Composition",
+    dll = ":ksp2/KSP2_x64_Data/Managed/System.ComponentModel.Composition.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "System.EnterpriseServices",
+    dll = ":ksp2/KSP2_x64_Data/Managed/System.EnterpriseServices.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "System.ComponentModel.DataAnnotations",
+    dll = ":ksp2/KSP2_x64_Data/Managed/System.ComponentModel.DataAnnotations.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "Unity.Burst.Cecil",
+    dll = ":ksp2/KSP2_x64_Data/Managed/Unity.Burst.Cecil.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "Ak.Wwise.Api.WAAPI",
+    dll = ":ksp2/KSP2_x64_Data/Managed/Ak.Wwise.Api.WAAPI.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "Unity.Formats.USD.Runtime",
+    dll = ":ksp2/KSP2_x64_Data/Managed/Unity.Formats.USD.Runtime.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "AK.Wwise.Unity.API.WwiseTypes",
+    dll = ":ksp2/KSP2_x64_Data/Managed/AK.Wwise.Unity.API.WwiseTypes.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "KSPLogging",
+    dll = ":ksp2/KSP2_x64_Data/Managed/KSPLogging.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "Accessibility",
+    dll = ":ksp2/KSP2_x64_Data/Managed/Accessibility.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "Novell.Directory.Ldap",
+    dll = ":ksp2/KSP2_x64_Data/Managed/Novell.Directory.Ldap.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "System.Drawing.Design",
+    dll = ":ksp2/KSP2_x64_Data/Managed/System.Drawing.Design.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "UnityEngine.InputModule",
+    dll = ":ksp2/KSP2_x64_Data/Managed/UnityEngine.InputModule.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "Mono.Posix",
+    dll = ":ksp2/KSP2_x64_Data/Managed/Mono.Posix.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "Unity.Mathematics",
+    dll = ":ksp2/KSP2_x64_Data/Managed/Unity.Mathematics.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "Microsoft.CSharp",
+    dll = ":ksp2/KSP2_x64_Data/Managed/Microsoft.CSharp.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "Castle.Core",
+    dll = ":ksp2/KSP2_x64_Data/Managed/Castle.Core.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "UnityEngine.PhysicsModule",
+    dll = ":ksp2/KSP2_x64_Data/Managed/UnityEngine.PhysicsModule.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "UnityEngine.VFXModule",
+    dll = ":ksp2/KSP2_x64_Data/Managed/UnityEngine.VFXModule.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "System.Web.Services",
+    dll = ":ksp2/KSP2_x64_Data/Managed/System.Web.Services.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "System.Xml",
+    dll = ":ksp2/KSP2_x64_Data/Managed/System.Xml.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "IGTools",
+    dll = ":ksp2/KSP2_x64_Data/Managed/IGTools.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "UnityEngine.SpriteShapeModule",
+    dll = ":ksp2/KSP2_x64_Data/Managed/UnityEngine.SpriteShapeModule.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "UnityEngine.TestRunner",
+    dll = ":ksp2/KSP2_x64_Data/Managed/UnityEngine.TestRunner.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "UnityEngine.DSPGraphModule",
+    dll = ":ksp2/KSP2_x64_Data/Managed/UnityEngine.DSPGraphModule.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "System.Design",
+    dll = ":ksp2/KSP2_x64_Data/Managed/System.Design.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "UnityEngine.CrashReportingModule",
+    dll = ":ksp2/KSP2_x64_Data/Managed/UnityEngine.CrashReportingModule.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "Unity.Postprocessing.Runtime",
+    dll = ":ksp2/KSP2_x64_Data/Managed/Unity.Postprocessing.Runtime.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "UnityEngine.AnimationModule",
+    dll = ":ksp2/KSP2_x64_Data/Managed/UnityEngine.AnimationModule.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "UnityEngine.SubstanceModule",
+    dll = ":ksp2/KSP2_x64_Data/Managed/UnityEngine.SubstanceModule.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "ShapesRuntime",
+    dll = ":ksp2/KSP2_x64_Data/Managed/ShapesRuntime.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "System.Numerics",
+    dll = ":ksp2/KSP2_x64_Data/Managed/System.Numerics.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "UnityEngine.UnityAnalyticsModule",
+    dll = ":ksp2/KSP2_x64_Data/Managed/UnityEngine.UnityAnalyticsModule.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "UnityEngine.IMGUIModule",
+    dll = ":ksp2/KSP2_x64_Data/Managed/UnityEngine.IMGUIModule.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "Unity.Burst.Cecil.Rocks",
+    dll = ":ksp2/KSP2_x64_Data/Managed/Unity.Burst.Cecil.Rocks.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "UnityEngine.VideoModule",
+    dll = ":ksp2/KSP2_x64_Data/Managed/UnityEngine.VideoModule.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "System.Diagnostics.StackTrace",
+    dll = ":ksp2/KSP2_x64_Data/Managed/System.Diagnostics.StackTrace.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "netstandard",
+    dll = ":ksp2/KSP2_x64_Data/Managed/netstandard.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "AmplifyShaderEditor.Samples.BuiltIn",
+    dll = ":ksp2/KSP2_x64_Data/Managed/AmplifyShaderEditor.Samples.BuiltIn.dll",
+    visibility = ["//visibility:public"],
+)
+
+import_dll(
+    name = "System.Runtime.Serialization.Formatters.Soap",
+    dll = ":ksp2/KSP2_x64_Data/Managed/System.Runtime.Serialization.Formatters.Soap.dll",
     visibility = ["//visibility:public"],
 )
