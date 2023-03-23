@@ -53,6 +53,7 @@ print(conn.space_center2.sealevel_altitude)
 ## Building on Windows
 
  * [Install Bazel](https://bazel.build/install/)
+   * Ensure you install MSYS2 to C:\tools\msys64 NOT the default path
    * If your user directory contains spaces, the build may not work. If this is the case, create a file called
      `%ProgramData%/bazel.bazelrc` containing the following:
      ```
