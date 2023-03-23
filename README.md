@@ -59,6 +59,7 @@ Also check out the [contribution guide](https://github.com/krpc/krpc/blob/main/C
 
 ## Building on Windows
 
+Using Bazel:
  * [Install Bazel](https://bazel.build/install/)
    * Ensure you install MSYS2 to C:\tools\msys64 NOT the default path
    * If your user directory contains spaces, the build may not work. If this is the case, create a file called
@@ -70,3 +71,9 @@ Also check out the [contribution guide](https://github.com/krpc/krpc/blob/main/C
  * Put a copy of KSP2 in lib/ksp2 (so you have `lib/ksp2/KSP_x64_Data/Managed/...`)
  * Run `bazel build //:krpc2`
  * The resulting plugin files are placed in the `bazel-bin/kRPC` directory
+
+Using Visual Studio:
+ * First you need to setup Bazel (see above for instructions). This is needed to generate a few files that are required to build the solution.
+ * Run `bazel build //:csproj`. This puts all the required files in `bazel-bin/csproj/...`
+ * Open `KRPC2.sln`.
+ * Fetch the remaining dependencies using nuget and build the project.
