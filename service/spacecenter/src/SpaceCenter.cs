@@ -32,10 +32,12 @@ namespace KRPC2.SpaceCenter
         /// <summary>
         /// The currently active vessel.
         /// </summary>
-        [KRPCProperty (GameScene = GameScene.Flight)]
-        public static Vessel ActiveVessel {
-            get { return new Vessel (InternalActiveVessel); }
-            set {
+        [KRPCProperty(GameScene = GameScene.Flight)]
+        public static Vessel ActiveVessel
+        {
+            get { return new Vessel(InternalActiveVessel); }
+            set
+            {
                 throw new NotImplementedException();
             }
         }
