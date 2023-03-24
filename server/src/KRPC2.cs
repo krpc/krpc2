@@ -40,5 +40,10 @@ namespace KRPC2
             if (core != null)
                 core.Update();
         }
+
+        public void OnApplicationQuit()
+        {
+            core.StopAll();
+        }
     }
 }
