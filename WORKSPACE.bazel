@@ -50,8 +50,8 @@ protobuf_core_deps()
 
 git_repository(
     name = "krpc_core",
+    commit = "0679f00caa46bd56ab94a4ec4362fa5ef3cf6821",
     remote = "https://github.com/krpc/krpc-core",
-    commit = "122fd20cd0b9e1fb18b0b08c2692f518c20de5c1",
 )
 
 load("@krpc_core//:workspace.bzl", "krpc_core_prebuilt_protoc", "krpc_core_workspace")

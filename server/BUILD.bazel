@@ -9,7 +9,9 @@ csharp_library(
     out = "KRPC2",
     private_deps = ksp2_deps,
     target_frameworks = ["netstandard2.1"],
+    treat_warnings_as_errors = True,
     visibility = ["//visibility:public"],
+    warning_level = 4,
     deps = [
         "//:bepinex",
         "//:spacewarp",

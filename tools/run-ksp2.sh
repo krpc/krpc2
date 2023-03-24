@@ -23,6 +23,8 @@
 #
 # Then run this script to launch KSP2 and output the BepInEx logs
 
+set -ev
+
 tools/install.sh
 
 echo "" > lib/ksp2/BepInEx/LogOutput.log
