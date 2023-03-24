@@ -15,7 +15,7 @@ namespace KRPC2
     public class KRPC2 : BaseSpaceWarpPlugin
     {
         private Core core;
-        public override void OnPostInitialized()
+        public override void OnInitialized()
         {
             Logger.LogInfo("Initializing core...");
             core = Core.Instance;
