@@ -54,7 +54,7 @@ Also check out the [contribution guide](https://github.com/krpc/krpc/blob/main/C
  * [Install Bazel](https://bazel.build/install/)
  * Create a symlink from `lib/ksp2` to where you have Kerbal Space Program 2 installed, so that you have `lib/ksp2/KSP_x64_Data/Managed/...`
  * Run `bazel build //:krpc2`
- * The resulting plugin archive is placed in `bazel-bin/krpc-VERSION.zip`
+ * The resulting plugin archive is placed in `bazel-bin/krpc2-VERSION.zip`
 
 ## Building on Windows
 
@@ -69,7 +69,7 @@ Using Bazel:
    * If you get permissions errors related to symlinks when building you need to enable "Developer Mode".
  * Put a copy of KSP2 in lib/ksp2 (so you have `lib/ksp2/KSP_x64_Data/Managed/...`)
  * Run `bazel build //:krpc2`
- * The resulting plugin archive is placed in `bazel-bin/krpc-VERSION.zip`
+ * The resulting plugin archive is placed in `bazel-bin/krpc2-VERSION.zip`
 
 Using Visual Studio:
  * First you need to setup Bazel (see above for instructions). This is needed to generate a few files that are required to build the solution.
