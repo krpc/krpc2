@@ -49,7 +49,7 @@ jobs:
         uses: krpc/krpc-core/.github/actions/upload-artifact@main
         with:
           name: krpc
-          path: bazel-bin/krpc-*.zip
+          path: bazel-bin/krpc2-*.zip
 
   build-krpc2-windows:
     runs-on: windows-latest
