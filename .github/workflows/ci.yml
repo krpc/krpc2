@@ -45,6 +45,11 @@ jobs:
           rm ksp2-0.1.1.zip
       - name: build
         run: bazel build //:krpc2
+      - name: upload-krpc-artifact
+        uses: krpc/krpc-core/.github/actions/upload-artifact@main
+        with:
+          name: krpc
+          path: bazel-bin/krpc-*.zip
 
   build-krpc2-windows:
     runs-on: windows-latest
