@@ -1,8 +1,21 @@
-load("@rules_dotnet//dotnet:defs.bzl", "import_dll")
 load("@bazel_skylib//rules:copy_file.bzl", "copy_file")
+load("@rules_dotnet//dotnet:defs.bzl", "import_dll")
+load("@rules_pkg//pkg:zip.bzl", "pkg_zip")
+load("//:config.bzl", "version")
+
+pkg_zip(
+    name = "krpc2",
+    srcs = [
+        "COPYING",
+        "LICENSE",
+        ":plugin_files",
+    ],
+    out = "krpc-%s.zip" % version,
+    package_dir = "BepInEx/plugins/kRPC2",
+)
 
 filegroup(
-    name = "krpc2",
+    name = "plugin_files",
     srcs = [
         ":copy_google_protobuf",
         ":copy_krpc2",
