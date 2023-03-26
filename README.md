@@ -38,10 +38,9 @@ Here's an example in Python, with all the currently available telemetry:
 ```
 import krpc
 conn = krpc.connect()
-print(conn.space_center2.horizontal_surface_speed)
-print(conn.space_center2.vertical_surface_speed)
-print(conn.space_center2.terrain_altitude)
-print(conn.space_center2.sealevel_altitude)
+print(conn.space_center2.active_vessel.orbit.eccentricity)
+print(conn.space_center2.active_vessel.orbit.apoapsis)
+print(conn.space_center2.active_vessel.orbit.periapsis)
 ```
 
 ## Development

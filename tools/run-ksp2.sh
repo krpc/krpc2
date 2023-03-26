@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Install steam
 # Download KSP2
@@ -28,6 +28,6 @@ set -ev
 tools/install.sh
 
 echo "" > lib/ksp2/BepInEx/LogOutput.log
-steam steam://rungameid/954850 &
+steam steam://rungameid/954850 2> steam.log &
 # tail -f lib/ksp2/PDLauncher/Ksp2.log
 tail -f lib/ksp2/BepInEx/LogOutput.log
