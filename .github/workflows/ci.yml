@@ -41,7 +41,7 @@ jobs:
         env:
           KSP2_LIB_PASSWORD: ${{ secrets.KSP2_LIB_PASSWORD }}
         run: |
-          wget https://krpc.s3.amazonaws.com/lib/ksp2-0.1.1.zip
+          wget https://github.com/krpc/ksp-lib/raw/main/ksp2/ksp2-0.1.1.zip
           mkdir -p lib/ksp2/KSP2_x64_Data/Managed
           unzip -P "$KSP2_LIB_PASSWORD" ksp2-0.1.1.zip -d lib/ksp2
           rm ksp2-0.1.1.zip
@@ -59,7 +59,7 @@ jobs:
         shell: pwsh
         run: |
           $client = new-object System.Net.WebClient
-          $client.DownloadFile("https://krpc.s3.amazonaws.com/lib/ksp2-0.1.1.zip", "ksp2-0.1.1.zip")
+          $client.DownloadFile("https://github.com/krpc/ksp-lib/raw/main/ksp2/ksp2-0.1.1.zip", "ksp2-0.1.1.zip")
           mkdir lib/ksp2/KSP2_x64_Data/Managed
           7z.exe x ksp2-0.1.1.zip -o"lib/ksp2" -p"$env:KSP2_LIB_PASSWORD" -y
           del ksp2-0.1.1.zip
@@ -82,7 +82,7 @@ jobs:
         env:
           KSP2_LIB_PASSWORD: ${{ secrets.KSP2_LIB_PASSWORD }}
         run: |
-          wget https://krpc.s3.amazonaws.com/lib/ksp2-0.1.1.zip
+          wget https://github.com/krpc/ksp-lib/raw/main/ksp2/ksp2-0.1.1.zip
           mkdir -p lib/ksp2/KSP2_x64_Data/Managed
           unzip -P "$KSP2_LIB_PASSWORD" ksp2-0.1.1.zip -d lib/ksp2
           rm ksp2-0.1.1.zip
@@ -102,7 +102,7 @@ jobs:
         shell: pwsh
         run: |
           $client = new-object System.Net.WebClient
-          $client.DownloadFile("https://krpc.s3.amazonaws.com/lib/ksp2-0.1.1.zip", "ksp2-0.1.1.zip")
+          $client.DownloadFile("https://github.com/krpc/ksp-lib/raw/main/ksp2/ksp2-0.1.1.zip", "ksp2-0.1.1.zip")
           mkdir lib/ksp2/KSP2_x64_Data/Managed
           7z.exe x ksp2-0.1.1.zip -o"lib/ksp2" -p"$env:KSP2_LIB_PASSWORD" -y
           del ksp2-0.1.1.zip
