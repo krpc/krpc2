@@ -38,12 +38,10 @@ jobs:
       - name: fetch
         uses: krpc/krpc-core/.github/actions/bazel-fetch@main
       - name: libs
-        env:
-          KSP2_LIB_PASSWORD: ${{ secrets.KSP2_LIB_PASSWORD }}
         run: |
           wget https://github.com/krpc/ksp-lib/raw/main/ksp2/ksp2-0.1.1.zip
           mkdir -p lib/ksp2/KSP2_x64_Data/Managed
-          unzip -P "$KSP2_LIB_PASSWORD" ksp2-0.1.1.zip -d lib/ksp2
+          unzip ksp2-0.1.1.zip -d lib/ksp2
           rm ksp2-0.1.1.zip
       - name: build
         run: bazel build //:krpc2
@@ -54,14 +52,12 @@ jobs:
       - name: checkout
         uses: actions/checkout@v3
       - name: libs
-        env:
-          KSP2_LIB_PASSWORD: ${{ secrets.KSP2_LIB_PASSWORD }}
         shell: pwsh
         run: |
           $client = new-object System.Net.WebClient
           $client.DownloadFile("https://github.com/krpc/ksp-lib/raw/main/ksp2/ksp2-0.1.1.zip", "ksp2-0.1.1.zip")
           mkdir lib/ksp2/KSP2_x64_Data/Managed
-          7z.exe x ksp2-0.1.1.zip -o"lib/ksp2" -p"$env:KSP2_LIB_PASSWORD" -y
+          7z.exe x ksp2-0.1.1.zip -o"lib/ksp2" -y
           del ksp2-0.1.1.zip
       - name: build
         run: bazel --bazelrc=.github/workflows/bazelrc build //:krpc2
@@ -79,12 +75,10 @@ jobs:
       - name: fetch
         uses: krpc/krpc-core/.github/actions/bazel-fetch@main
       - name: libs
-        env:
-          KSP2_LIB_PASSWORD: ${{ secrets.KSP2_LIB_PASSWORD }}
         run: |
           wget https://github.com/krpc/ksp-lib/raw/main/ksp2/ksp2-0.1.1.zip
           mkdir -p lib/ksp2/KSP2_x64_Data/Managed
-          unzip -P "$KSP2_LIB_PASSWORD" ksp2-0.1.1.zip -d lib/ksp2
+          unzip ksp2-0.1.1.zip -d lib/ksp2
           rm ksp2-0.1.1.zip
       - name: deps
         run: bazel build //:csproj
@@ -97,14 +91,12 @@ jobs:
       - name: checkout
         uses: actions/checkout@v3
       - name: libs
-        env:
-          KSP2_LIB_PASSWORD: ${{ secrets.KSP2_LIB_PASSWORD }}
         shell: pwsh
         run: |
           $client = new-object System.Net.WebClient
           $client.DownloadFile("https://github.com/krpc/ksp-lib/raw/main/ksp2/ksp2-0.1.1.zip", "ksp2-0.1.1.zip")
           mkdir lib/ksp2/KSP2_x64_Data/Managed
-          7z.exe x ksp2-0.1.1.zip -o"lib/ksp2" -p"$env:KSP2_LIB_PASSWORD" -y
+          7z.exe x ksp2-0.1.1.zip -o"lib/ksp2" -y
           del ksp2-0.1.1.zip
       - name: deps
         run: bazel --bazelrc=.github/workflows/bazelrc build //:csproj
