@@ -13,6 +13,7 @@ namespace KRPC2.SpaceCenter
     [KRPCClass(Service = "SpaceCenter2")]
     public class Vessel : Equatable<Vessel>
     {
+
         /// <summary>
         /// Construct from a VesselComponent.
         /// </summary>
@@ -21,6 +22,7 @@ namespace KRPC2.SpaceCenter
             if (ReferenceEquals(vessel, null))
                 throw new ArgumentNullException(nameof(vessel));
             Id = vessel.GlobalId;
+            InternalVessel = vessel;
         }
 
         /// <summary>
@@ -43,5 +45,19 @@ namespace KRPC2.SpaceCenter
         /// The KSP vessel id.
         /// </summary>
         public IGGuid Id { get; private set; }
+
+        /// <summary>
+        /// The KSP vessel object.
+        /// </summary>
+        public VesselComponent InternalVessel { get; private set; }
+
+        /// <summary>
+        /// The current orbit of the vessel.
+        /// </summary>
+        [KRPCProperty]
+        public Orbit Orbit
+        {
+            get { return new Orbit(InternalVessel); }
+        }
     }
 }
