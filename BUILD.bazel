@@ -10,7 +10,7 @@ pkg_zip(
         "LICENSE",
         ":plugin_files",
     ],
-    out = "krpc-%s.zip" % version,
+    out = "krpc2-%s.zip" % version,
     package_dir = "BepInEx/plugins/kRPC2",
 )
 
