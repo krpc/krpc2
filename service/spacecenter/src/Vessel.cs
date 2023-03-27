@@ -1,5 +1,6 @@
 using System;
 using KSP.Sim.impl;
+using KRPC.Service;
 using KRPC.Service.Attributes;
 using KRPC.Utils;
 
@@ -58,6 +59,17 @@ namespace KRPC2.SpaceCenter
         public Orbit Orbit
         {
             get { return new Orbit(InternalVessel); }
+        }
+
+        /// <summary>
+        /// Returns a <see cref="Control"/> object that can be used to manipulate
+        /// the vessel's control inputs. For example, its pitch/yaw/roll controls,
+        /// RCS and thrust.
+        /// </summary>
+        [KRPCProperty(GameScene = GameScene.Flight)]
+        public Control Control
+        {
+            get { return new Control(InternalVessel); }
         }
     }
 }
