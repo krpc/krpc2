@@ -18,8 +18,8 @@ namespace KRPC2.SpaceCenter
     /// Obtained by calling <see cref="Vessel.Control"/>.
     /// </summary>
     /// <remarks>
-    /// Control inputs (such as pitch, yaw and roll) are zeroed when all clients
-    /// that have set one or more of these inputs are no longer connected.
+    /// Control inputs (such as pitch, yaw and roll) are instantaneous (the same
+    /// as tapping a button)
     /// </remarks>
     [KRPCClass(Service = "SpaceCenter2", GameScene = GameScene.Flight)]
     public class Control : Equatable<Control>
@@ -201,7 +201,7 @@ namespace KRPC2.SpaceCenter
         }
 
         /// <summary>
-        /// The state of the wheel steer control. A value between -1 and 1.
+        /// The state of the wheel steer control for rovers. A value between -1 and 1.
         /// </summary>
         [KRPCProperty]
         public float WheelSteer
@@ -221,7 +221,7 @@ namespace KRPC2.SpaceCenter
         }
 
         /// <summary>
-        /// The state of the wheel steer trim control. A value between -1 and 1.
+        /// The state of the wheel steer trim control for rovers. A value between -1 and 1.
         /// </summary>
         [KRPCProperty]
         public float WheelSteerTrim
@@ -241,7 +241,7 @@ namespace KRPC2.SpaceCenter
         }
 
         /// <summary>
-        /// The state of the wheel throttle control. A value between -1 and 1.
+        /// The state of the wheel throttle control for rovers. A value between -1 and 1.
         /// </summary>
         [KRPCProperty]
         public float WheelThrottle
@@ -261,7 +261,7 @@ namespace KRPC2.SpaceCenter
         }
 
         /// <summary>
-        /// The state of the wheel throttle trim control. A value between -1 and 1.
+        /// The state of the wheel throttle trim control for rovers. A value between -1 and 1.
         /// </summary>
         [KRPCProperty]
         public float WheelThrottleTrim
