@@ -3,8 +3,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
-using KRPC.Utils;
 using UnityEngine;
 using Tuple2 = System.Tuple<double, double>;
 using Tuple3 = System.Tuple<double, double, double>;
@@ -13,7 +11,7 @@ using Tuple4f = System.Tuple<float, float, float, float>;
 using TupleV3 = System.Tuple<Vector3d, Vector3d>;
 using TupleT3 = System.Tuple<System.Tuple<double, double, double>, System.Tuple<double, double, double>>;
 
-namespace KRPC2.ExtensionMethods
+namespace KRPC2.Utils
 {
     /// <summary>
     /// Extensions for geometry classes
