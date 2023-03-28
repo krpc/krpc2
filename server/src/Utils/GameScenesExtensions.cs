@@ -7,20 +7,16 @@ namespace KRPC2.Utils
     {
         internal static GameScene ToGameScene(GameState state)
         {
-            // FIXME: we are ignoring a lot of game states. We should probably extend krpc-core to support more scenes.
             switch (state)
             {
                 case GameState.KerbalSpaceCenter:
                     return GameScene.SpaceCenter;
                 case GameState.FlightView:
-                case GameState.Launchpad:
-                case GameState.Map3DView:
-                case GameState.Runway:
                     return GameScene.Flight;
-                case GameState.TrackingStation:
+                case GameState.Map3DView:
                     return GameScene.TrackingStation;
                 case GameState.VehicleAssemblyBuilder:
-                    return GameScene.EditorVAB;
+                    return GameScene.Editor | GameScene.EditorVAB | GameScene.EditorSPH;
                 default:
                     return GameScene.None;
             }
