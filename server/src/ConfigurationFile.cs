@@ -6,7 +6,7 @@ using UnityEngine;
 using BepInEx;
 using BepInEx.Configuration;
 using KRPC;
-using KRPC2.ExtensionMethods;
+using KRPC2.Utils;
 using KRPC.Server;
 
 namespace KRPC2
