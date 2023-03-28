@@ -4,6 +4,9 @@ bazel-*
 lib/ksp2
 *.log
 
+# dotnet
+.config/
+
 # Visual Studio
 .vs/
 .localhistory/
