@@ -81,8 +81,14 @@ namespace KRPC2.SpaceCenter
         }
 
         /// <summary>
-        /// The state of the roll control. A value between -1 and 1.
+        /// Instantaneous change to the roll control, and current roll state. A value between -1 and 1.
         /// </summary>
+        /// <remarks>
+        /// Reading this value provides the instantaneous roll control value.
+        /// Setting this value is the same as tapping q/e in stock KSP2.
+        /// The roll experienced by the vehicle will be RollTrim + Roll. KSP
+        /// will internally clamp this value between -1 and 1.
+        /// </remarks>
         [KRPCProperty]
         public float Roll
         {
@@ -101,8 +107,14 @@ namespace KRPC2.SpaceCenter
         }
 
         /// <summary>
-        /// The state of the yaw control. A value between -1 and 1.
+        /// Instantaneous change to the yaw control, and current yaw state. A value between -1 and 1.
         /// </summary>
+        /// <remarks>
+        /// Reading this value provides the instantaneous yaw control value.
+        /// Setting this value is the same as tapping a/d in stock KSP2.
+        /// The yaw experienced by the vehicle will be YawTrim + Yaw. KSP
+        /// will internally clamp this value between -1 and 1.
+        /// </remarks>
         [KRPCProperty]
         public float Yaw
         {
@@ -121,8 +133,14 @@ namespace KRPC2.SpaceCenter
         }
 
         /// <summary>
-        /// The state of the pitch control. A value between -1 and 1.
+        /// Instantaneous change to the pitch control, and current pitch state. A value between -1 and 1.
         /// </summary>
+        /// <remarks>
+        /// Reading this value provides the instantaneous pitch control value.
+        /// Setting this value is the same as tapping w/s in stock KSP2.
+        /// The pitch experienced by the vehicle will be PitchTrim + Pitch. KSP
+        /// will internally clamp this value between -1 and 1.
+        /// </remarks>
         [KRPCProperty]
         public float Pitch
         {
@@ -143,6 +161,10 @@ namespace KRPC2.SpaceCenter
         /// <summary>
         /// The state of the roll trim control. A value between -1 and 1.
         /// </summary>
+        /// <remarks>
+        /// This will set the roll control to have this value as a baseline.
+        /// For an instantaneous roll change, see <see cref="Roll"/>.
+        /// </remarks>
         [KRPCProperty]
         public float RollTrim
         {
@@ -163,6 +185,10 @@ namespace KRPC2.SpaceCenter
         /// <summary>
         /// The state of the yaw trim control. A value between -1 and 1.
         /// </summary>
+        /// <remarks>
+        /// This will set the yaw control to have this value as a baseline.
+        /// For an instantaneous yaw change, see <see cref="Yaw"/>.
+        /// </remarks>
         [KRPCProperty]
         public float YawTrim
         {
@@ -183,6 +209,10 @@ namespace KRPC2.SpaceCenter
         /// <summary>
         /// The state of the pitch trim control. A value between -1 and 1.
         /// </summary>
+        /// <remarks>
+        /// This will set the pitch control to have this value as a baseline.
+        /// For an instantaneous pitch change, see <see cref="Pitch"/>.
+        /// </remarks>
         [KRPCProperty]
         public float PitchTrim
         {
@@ -195,147 +225,6 @@ namespace KRPC2.SpaceCenter
                 var incremental = new FlightCtrlStateIncremental()
                 {
                     pitchTrim = value
-                };
-                AtomicSet(incremental);
-            }
-        }
-
-        /// <summary>
-        /// The state of the wheel steer control for rovers. A value between -1 and 1.
-        /// </summary>
-        [KRPCProperty]
-        public float WheelSteer
-        {
-            get
-            {
-                return InternalVessel.flightCtrlState.wheelSteer;
-            }
-            set
-            {
-                var incremental = new FlightCtrlStateIncremental()
-                {
-                    wheelSteer = value
-                };
-                AtomicSet(incremental);
-            }
-        }
-
-        /// <summary>
-        /// The state of the wheel steer trim control for rovers. A value between -1 and 1.
-        /// </summary>
-        [KRPCProperty]
-        public float WheelSteerTrim
-        {
-            get
-            {
-                return InternalVessel.flightCtrlState.wheelSteerTrim;
-            }
-            set
-            {
-                var incremental = new FlightCtrlStateIncremental()
-                {
-                    wheelSteerTrim = value
-                };
-                AtomicSet(incremental);
-            }
-        }
-
-        /// <summary>
-        /// The state of the wheel throttle control for rovers. A value between -1 and 1.
-        /// </summary>
-        [KRPCProperty]
-        public float WheelThrottle
-        {
-            get
-            {
-                return InternalVessel.flightCtrlState.wheelThrottle;
-            }
-            set
-            {
-                var incremental = new FlightCtrlStateIncremental()
-                {
-                    wheelThrottle = value
-                };
-                AtomicSet(incremental);
-            }
-        }
-
-        /// <summary>
-        /// The state of the wheel throttle trim control for rovers. A value between -1 and 1.
-        /// </summary>
-        [KRPCProperty]
-        public float WheelThrottleTrim
-        {
-            get
-            {
-                return InternalVessel.flightCtrlState.wheelThrottleTrim;
-            }
-            set
-            {
-                var incremental = new FlightCtrlStateIncremental()
-                {
-                    wheelThrottleTrim = value
-                };
-                AtomicSet(incremental);
-            }
-        }
-
-        /// <summary>
-        /// Whether the gear up control is active.
-        /// </summary>
-        [KRPCProperty]
-        public bool Gear
-        {
-            get
-            {
-                return InternalVessel.flightCtrlState.gearUp;
-            }
-            set
-            {
-                var incremental = new FlightCtrlStateIncremental()
-                {
-                    gearUp = value,
-                    gearDown = !value
-                };
-                AtomicSet(incremental);
-            }
-        }
-
-        /// <summary>
-        /// Whether the light control is active.
-        /// </summary>
-        [KRPCProperty]
-        public bool Lights
-        {
-            get
-            {
-                return InternalVessel.flightCtrlState.headlight;
-            }
-            set
-            {
-                var incremental = new FlightCtrlStateIncremental()
-                {
-                    headlight = value
-                };
-                AtomicSet(incremental);
-            }
-        }
-
-        /// <summary>
-        /// Whether the brakes control is active.
-        /// </summary>
-        [KRPCProperty]
-        public bool Brakes
-        {
-            get
-            {
-                return InternalVessel.flightCtrlState.brakes;
-            }
-            set
-            {
-                var incremental = new FlightCtrlStateIncremental()
-                {
-                    brakes = value
                 };
                 AtomicSet(incremental);
             }

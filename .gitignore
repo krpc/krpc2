@@ -2,6 +2,7 @@ bazel-*
 
 # KSP2
 lib/ksp2
+*.log
 
 # Visual Studio
 .vs/
