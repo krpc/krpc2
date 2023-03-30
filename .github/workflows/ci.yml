@@ -37,12 +37,11 @@ jobs:
         uses: actions/checkout@v3
       - name: fetch
         uses: krpc/krpc-core/.github/actions/bazel-fetch@main
-      - name: libs
-        run: |
-          wget https://github.com/krpc/ksp-lib/raw/main/ksp2/ksp2-0.1.1.zip
-          mkdir -p lib/ksp2/KSP2_x64_Data/Managed
-          unzip ksp2-0.1.1.zip -d lib/ksp2
-          rm ksp2-0.1.1.zip
+      - name: ksp-lib
+        uses: krpc/krpc-core/.github/actions/ksp-lib@main
+        with:
+          game: ksp2
+          version: 0.1.1
       - name: build
         run: bazel build //:krpc2
       - name: upload-krpc-artifact
@@ -58,14 +57,11 @@ jobs:
         uses: actions/checkout@v3
       - name: fetch
         uses: krpc/krpc-core/.github/actions/bazel-fetch@main
-      - name: libs
-        shell: pwsh
-        run: |
-          $client = new-object System.Net.WebClient
-          $client.DownloadFile("https://github.com/krpc/ksp-lib/raw/main/ksp2/ksp2-0.1.1.zip", "ksp2-0.1.1.zip")
-          mkdir lib/ksp2/KSP2_x64_Data/Managed
-          7z.exe x ksp2-0.1.1.zip -o"lib/ksp2" -y
-          del ksp2-0.1.1.zip
+      - name: ksp-lib
+        uses: krpc/krpc-core/.github/actions/ksp-lib@main
+        with:
+          game: ksp2
+          version: 0.1.1
       - name: build
         run: bazel --bazelrc=.github/workflows/bazelrc build //:krpc2
 
@@ -81,12 +77,11 @@ jobs:
         uses: actions/checkout@v3
       - name: fetch
         uses: krpc/krpc-core/.github/actions/bazel-fetch@main
-      - name: libs
-        run: |
-          wget https://github.com/krpc/ksp-lib/raw/main/ksp2/ksp2-0.1.1.zip
-          mkdir -p lib/ksp2/KSP2_x64_Data/Managed
-          unzip ksp2-0.1.1.zip -d lib/ksp2
-          rm ksp2-0.1.1.zip
+      - name: ksp-lib
+        uses: krpc/krpc-core/.github/actions/ksp-lib@main
+        with:
+          game: ksp2
+          version: 0.1.1
       - name: deps
         run: bazel build //:csproj
       - name: build
@@ -99,14 +94,11 @@ jobs:
         uses: actions/checkout@v3
       - name: fetch
         uses: krpc/krpc-core/.github/actions/bazel-fetch@main
-      - name: libs
-        shell: pwsh
-        run: |
-          $client = new-object System.Net.WebClient
-          $client.DownloadFile("https://github.com/krpc/ksp-lib/raw/main/ksp2/ksp2-0.1.1.zip", "ksp2-0.1.1.zip")
-          mkdir lib/ksp2/KSP2_x64_Data/Managed
-          7z.exe x ksp2-0.1.1.zip -o"lib/ksp2" -y
-          del ksp2-0.1.1.zip
+      - name: ksp-lib
+        uses: krpc/krpc-core/.github/actions/ksp-lib@main
+        with:
+          game: ksp2
+          version: 0.1.1
       - name: deps
         run: bazel --bazelrc=.github/workflows/bazelrc build //:csproj
       - name: build
