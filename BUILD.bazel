@@ -19,7 +19,7 @@ filegroup(
     srcs = [
         ":copy_google_protobuf",
         ":copy_krpc2",
-        ":copy_krpc2_spacecenter",
+        ":copy_krpc2_space_center",
         ":copy_krpc2_swinfo",
         ":copy_krpc_core",
         ":copy_krpc_io_ports",
@@ -45,8 +45,8 @@ copy_file(
 )
 
 copy_file(
-    name = "copy_krpc2_spacecenter",
-    src = "//service/spacecenter",
+    name = "copy_krpc2_space_center",
+    src = "//service/space_center",
     out = "kRPC2/KRPC2.SpaceCenter.dll",
 )
 
@@ -81,7 +81,7 @@ filegroup(
         ":csproj_bepinex",
         ":csproj_google_protobuf",
         ":csproj_krpc2_assembly_info",
-        ":csproj_krpc2_spacecenter_assembly_info",
+        ":csproj_krpc2_space_center_assembly_info",
         ":csproj_krpc_core",
         ":csproj_krpc_io_ports",
         ":csproj_spacewarp",
@@ -125,7 +125,7 @@ copy_file(
 )
 
 copy_file(
-    name = "csproj_krpc2_spacecenter_assembly_info",
-    src = "//service/spacecenter:assembly_info",
-    out = "csproj/service/spacecenter/src/AssemblyInfo.cs",
+    name = "csproj_krpc2_space_center_assembly_info",
+    src = "//service/space_center:assembly_info",
+    out = "csproj/service/space_center/src/AssemblyInfo.cs",
 )
