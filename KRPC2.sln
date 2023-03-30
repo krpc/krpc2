@@ -5,7 +5,7 @@ VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KRPC2", "server\src\KRPC2.csproj", "{19FCA171-3C7C-4652-932C-33A6148024EA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KRPC2.SpaceCenter", "service\spacecenter\src\KRPC2.SpaceCenter.csproj", "{B660C8DC-DF42-411F-9E1B-0E4D98B5E459}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KRPC2.SpaceCenter", "service\space_center\src\KRPC2.SpaceCenter.csproj", "{B660C8DC-DF42-411F-9E1B-0E4D98B5E459}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

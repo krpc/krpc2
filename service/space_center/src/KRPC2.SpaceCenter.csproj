@@ -41,7 +41,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\..\bazel-bin\csproj\service\spacecenter\src\AssemblyInfo.cs">
+    <Compile Include="..\..\..\bazel-bin\csproj\service\space_center\src\AssemblyInfo.cs">
       <Link>AssemblyInfo.cs</Link>
     </Compile>
   </ItemGroup>
