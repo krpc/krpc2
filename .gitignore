@@ -29,3 +29,6 @@ __pycache__/
 
 # MSBuild Binary and Structured Log
 *.binlog
+
+# JetBrains
+.idea
