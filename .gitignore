@@ -35,4 +35,3 @@ __pycache__/
 
 # Nix
 result
-flake.lock
