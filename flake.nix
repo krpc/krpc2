@@ -2,7 +2,7 @@
   description = "Remote Procedure Calls for Kerbal Space Program 2";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/master";
+    nixpkgs.url = "github:NixOS/nixpkgs/22.11";
     flake-utils.url = "github:numtide/flake-utils";
   };
 
