@@ -65,6 +65,17 @@ jobs:
       - name: build
         run: bazel --bazelrc=.github/workflows/bazelrc build //:krpc2
 
+  build-krpc2-nix-linux:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+      - uses: cachix/install-nix-action@v19
+      - run: nix flake check
+      # TODO: We can add the build to a cache for others (see cachix.org)
+      # It's free for FOSS.
+      - run: nix build .#krpc2
+
   build-krpc2-sln-linux:
     runs-on: ubuntu-latest
     container:
