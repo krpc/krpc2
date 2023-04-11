@@ -20,7 +20,7 @@
         # FHS. NOTE: This should also act as an environment regularizing command
         # on other OSes, but may make inital build times a bit longer.
         wrapped-bazel = pkgs.bazel_6.overrideAttrs (old: {
-          postInstall = ''
+          postFixup = ''
             mv $out/bin/bazel $out/bin/bazel-raw
             echo '#!${pkgs.stdenv.shell}' > $out/bin/bazel
             echo "${pkgs.steam-run}/bin/steam-run $out/bin/bazel-raw \$@" >> $out/bin/bazel
@@ -54,6 +54,9 @@
           pname = "krpc2";
           bazel = wrapped-bazel;
           bazelTarget = ":plugin_files";
+          nativeBuildInputs = [
+            pkgs.git
+          ];
           src = ./.;
           # NOTE: Update on change to bazel fetch deps.
           fetchAttrs = {
