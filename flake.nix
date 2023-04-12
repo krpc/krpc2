@@ -62,7 +62,7 @@
           src = ./.;
           # NOTE: Update on change to bazel fetch deps.
           fetchAttrs = {
-            sha256 = "sha256-ce20qIEBO0JyQWvOrt/mLGSH0PLIHtdGjdMJkBG13Ws=";
+            sha256 = "sha256-YaT+xVd0ywE4l/ZnI3ZiI+f5NawE161dJdcMAklR80o=";
           };
           patchPhase = ''
             # Copied directory, so will not influence local symlinks.
