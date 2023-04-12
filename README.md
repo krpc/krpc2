@@ -56,6 +56,12 @@ Also check out the [contribution guide](https://github.com/krpc/krpc/blob/main/C
  * Run `bazel build //:krpc2`
  * The resulting plugin archive is placed in `bazel-bin/krpc2-VERSION.zip`
 
+### Developing with Nix
+
+To install dependencies and start a development environment with Nix, run `nix develop`.
+This will install all the required programs, from there configure your system to build as on a regular Linux system.
+Running `nix build .#krpc2` will build your active source against the stripped compilation libraries used in continuous integration.
+
 ## Building on Windows
 
 Using Bazel:
