@@ -2,7 +2,7 @@
   description = "Remote Procedure Calls for Kerbal Space Program 2";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/22.11";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-22.11";
     flake-utils.url = "github:numtide/flake-utils";
   };
 
@@ -19,7 +19,9 @@
         # We wrap Bazel here for NixOS support which does not have the standard
         # FHS. NOTE: This should also act as an environment regularizing command
         # on other OSes, but may make inital build times a bit longer.
-        wrapped-bazel = pkgs.bazel_6.overrideAttrs (old: {
+        wrapped-bazel = pkgs.bazel_5.overrideAttrs (old: {
+          doCheck = false;
+          doInstallCheck = false;
           postFixup = ''
             mv $out/bin/bazel $out/bin/bazel-raw
             echo '#!${pkgs.stdenv.shell}' > $out/bin/bazel
@@ -60,7 +62,7 @@
           src = ./.;
           # NOTE: Update on change to bazel fetch deps.
           fetchAttrs = {
-            sha256 = "sha256-5cw0OjkrfoYwtC1rOnBtapqvigUSb7MT1Z+SFGcEtk4=";
+            sha256 = "sha256-ce20qIEBO0JyQWvOrt/mLGSH0PLIHtdGjdMJkBG13Ws=";
           };
           patchPhase = ''
             # Copied directory, so will not influence local symlinks.
@@ -70,9 +72,6 @@
             mv lib/KSP2_x64_Data lib/ksp2/
           '';
           buildAttrs = {
-            dontUseCmakeConfigure = true;
-            dontUseGnConfigure = true;
-            dontUseNinjaInstall = true;
             installPhase = ''
               mkdir -p $out/lib
               install -Dm0755 bazel-bin/kRPC2/* $out/lib/
