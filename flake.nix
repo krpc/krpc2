@@ -19,7 +19,7 @@
         # We wrap Bazel here for NixOS support which does not have the standard
         # FHS. NOTE: This should also act as an environment regularizing command
         # on other OSes, but may make inital build times a bit longer.
-        wrapped-bazel = pkgs.bazel_5.overrideAttrs (old: {
+        wrapped-bazel = pkgs.bazel_6.overrideAttrs (old: {
           doCheck = false;
           doInstallCheck = false;
           postFixup = ''
