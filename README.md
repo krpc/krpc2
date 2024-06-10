@@ -1,3 +1,7 @@
+# Notice: I (djungelorm) am not actively developing this. If you would like to contribute PRs or take over the project please get in touch on Discord.
+
+#
+
 # kRPC2 - Remote Procedure Calls for Kerbal Space Program 2
 
 [![ci](https://github.com/krpc/krpc2/actions/workflows/ci.yml/badge.svg)](https://github.com/krpc/krpc2/actions/workflows/ci.yml)
