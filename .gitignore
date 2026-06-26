@@ -32,3 +32,6 @@ __pycache__/
 
 # JetBrains
 .idea
+
+# Nix
+result
