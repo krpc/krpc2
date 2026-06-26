@@ -1,6 +1,5 @@
-# Notice: I (djungelorm) am not actively developing this. If you would like to contribute PRs or take over the project please get in touch on Discord.
-
-#
+> [!IMPORTANT]
+> kRPC2 is no longer being developed, due to KSP2 being abandoned.
 
 # kRPC2 - Remote Procedure Calls for Kerbal Space Program 2
 
